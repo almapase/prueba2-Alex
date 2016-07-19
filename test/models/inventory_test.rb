@@ -15,5 +15,11 @@ class InventoryTest < ActiveSupport::TestCase
     assert_not @inventory.valid?
   end
 
+  test "Record serial number afert destroy" do
+    text = "La pieza con serial #{@inventory.serial_number} ha sido borrada"
+    @inventory.destroy
+    assert_equal text, Record.last.description
+  end
+
 
 end
