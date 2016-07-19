@@ -1,4 +1,4 @@
 class User < ActiveRecord::Base
-  has_many :works
+  has_many :works, dependent: :destroy
   validates :name, presence: true
 end
