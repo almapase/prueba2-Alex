@@ -3,6 +3,7 @@
 one:
   description: trabajo1-1
   user: one
+  inventory: one
 
 two:
   description: trabajo1-2

@@ -11,4 +11,9 @@ class WorkTest < ActiveSupport::TestCase
     assert_equal u.name, w.user.name
   end
 
+  test "Scope without_item must have only inventory_id nil" do
+    values = Work.without_item.map(&:inventory_id)
+    assert_not_includes(values, !nil )
+  end
+
 end

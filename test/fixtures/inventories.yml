@@ -4,10 +4,10 @@ one:
   serial_number: 1
   size: 1
   description: MyString
-  category_id:
+  category_id: one
 
 two:
   serial_number: 2
   size: 1
   description: MyString
-  category_id:
+  category_id: two

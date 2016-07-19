@@ -7,6 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 Work.destroy_all
 User.destroy_all
+Inventory.destroy_all
 
 2.times do |i|
   u = User.new(name: "usuario#{i+1}")
