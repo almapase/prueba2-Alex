@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  serial_number: 1
+  size: 1
+  description: MyString
+  category_id:
+
+two:
+  serial_number: 2
+  size: 1
+  description: MyString
+  category_id:
