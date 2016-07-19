@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'works/index'
+  root 'works#index'
+  get 'works/delete/:id' => 'works#delete', as: "delete_work"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,0 +1,23 @@
+<h1>Works</h1>
+<table class="table">
+    <thead>
+      <tr>
+        <th>Description</th>
+        <th>User Name</th>
+        <th>Item</th>
+        <th>Category</th>
+        <th>Destroy</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @works.each do |work| %>
+      <tr>
+        <td><%= work.description %></td>
+        <td><%= work.user.try(:name) %></td>
+        <td><%= work.inventory.try(:description) %></td>
+        <td><%= work.inventory.try(:category).try(:name) %></td>
+        <td><a href="<%= delete_work_path(id: work.id) %>"> DESTROY </a></td>
+      </tr>
+      <% end%>
+    </tbody>
+  </table>

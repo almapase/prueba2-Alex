@@ -8,10 +8,23 @@
 Work.destroy_all
 User.destroy_all
 Inventory.destroy_all
+Category.destroy_all
 
-2.times do |i|
-  u = User.new(name: "usuario#{i+1}")
-  u.works.build(description: "trabajo#{i+1}-1")
-  u.works.build(description: "trabajo#{i+1}-2")
-  u.save
+
+4.times do |i|
+  c = Category.create(name: "Categoría #{i+1}")
+  c.inventories.build(description: "item#{i+1}", size: 2, serial_number: i)
+  c.save
 end
+
+
+
+u = User.new(name: "usuario 1")
+u.works.build(description: "trabajo1-1", inventory: Inventory.find_by(serial_number: 1))
+u.works.build(description: "trabajo1-2")
+u.save
+
+u = User.new(name: "usuario 2")
+u.works.build(description: "trabajo2-1", inventory: Inventory.find_by(serial_number: 3))
+u.works.build(description: "trabajo2-2")
+u.save
